@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './sign-in-1-ui-styles/SignIn.module.css'
+import styles from './sign-in-1-ui-styles/SignIn.module.scss'
 import Preloader from "../../../7-helpers/Preloader/Preloader";
 
 interface SignInProps {
@@ -19,34 +19,35 @@ const SignIn: React.FC<SignInProps> = ({
                                            onEmailChanged, onPasswordChanged, onRememberChange, onSubmit // callbacks
                                        }) => {
     return (
-        <div className={styles.wrapper}>
-            <h2>Форма входа</h2>
-            <div className={styles.forms}>
-                <div className={styles.form}>
-                    <span>Мэйл: </span>
-                    <input type={"email"} placeholder={'Адрес почты'}
-                           value={email}
-                           onChange={e => onEmailChanged(e.currentTarget.value)}/>
-                </div>
-                <div className={styles.form}>
-                    <span>Пароль: </span>
-                    <input type={"password"} placeholder={'Пароль'}
-                           value={password}
-                           onChange={e => onPasswordChanged(e.currentTarget.value)}/>
-                </div>
-                {isFetching
-                    ? <Preloader/>
-                    : null}
-                <div className={styles.form}>
-                    <input type={"checkbox"} placeholder={'rememberMe'}
-                           checked={rememberMe}
-                           onChange={e => onRememberChange(e.currentTarget.checked)}/>
-                    <span>Запомнить </span>
+        <div className={styles.container}>
+            <div className={styles.wrapper}>
+                <h2 className={styles.header}>Форма входа</h2>
+                <div className={styles.forms}>
+                    <div className={styles.form}>
+                        <input type={"email"} placeholder={'Адрес почты'}
+                               value={email}
+                               onChange={e => onEmailChanged(e.currentTarget.value)}/>
+                    </div>
+                    <div className={styles.form}>
+                        <input type={"password"} placeholder={'Пароль'}
+                               value={password}
+                               onChange={e => onPasswordChanged(e.currentTarget.value)}/>
+                    </div>
+                    {isFetching
+                        ? <Preloader/>
+                        : null}
+                    <div className={styles.form}>
+                        <input type={"checkbox"} placeholder={'rememberMe'}
+                               checked={rememberMe} className={styles.checkbox}
+                               onChange={e => onRememberChange(e.currentTarget.checked)}/>
+                        <label className={styles.label}>запомнить</label>
+                    </div>
                     <button className={styles.button} disabled={isFetching} onClick={onSubmit}>Войти</button>
+                    {errorMessage && <mark>{errorMessage}</mark>}
                 </div>
-                {errorMessage && <mark>{errorMessage}</mark>}
             </div>
         </div>
+
     );
 };
 

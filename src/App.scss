@@ -1,3 +1,8 @@
+@import "./0-styles/Full-Styles.scss";
+
 .App {
+  height: 100vh;
   text-align: center;
+  background-color: $default-bg;
+  color: $default-color;
 }
