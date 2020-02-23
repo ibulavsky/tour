@@ -36,12 +36,13 @@
 
 // inputs
 @mixin form() {
-  width: 100%;
+  width: $input-width;
   display: flex;
   align-items: center;
   margin: 5px 0;
 
   input {
+    width: 100%;
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -59,6 +60,7 @@
   background-color: white;
 
   &:hover {
+    cursor: pointer;
     border: $focus-element-border;
   }
 }

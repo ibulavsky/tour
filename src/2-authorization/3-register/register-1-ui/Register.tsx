@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from "./register-1-ui-styles/Register.module.scss";
+import {REGISTER_PATH, SIGN_IN_PATH} from "../../../1-main/main-1-ui/Routes";
+import {Redirect} from "react-router";
+import {NavLink} from "react-router-dom";
 
 interface RegisterProps {
 
@@ -38,7 +41,10 @@ const Register: React.FC<RegisterProps> = ({email, passwordFirst, passwordSecond
                                onChange={e => onSetSecondPassword(e.currentTarget.value)}/>
                     </div>
                     <button className={styles.button} onClick={onSubmit}>Регистрация</button>
-                    <div>{errorMessage}</div>
+                    <mark className={styles.error}>{errorMessage}</mark>
+                </div>
+                <div className={styles.control}>
+                    <NavLink to={SIGN_IN_PATH} className={styles.link}>Уже есть регистрация</NavLink>
                 </div>
             </div>
         </div>
