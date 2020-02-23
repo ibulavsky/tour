@@ -1,0 +1,9 @@
+@import "../../0-styles/Full-Styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: $header-height;
+  //background-color: azure;
+}
+

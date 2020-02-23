@@ -3,6 +3,8 @@
 .App {
   height: 100vh;
   text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, $opacity-bg), rgba(0, 0, 0, $opacity-bg)), url(./0-styles/assets/bg.jfif);
+  background-size: 100%;
   background-color: $default-bg;
   color: $default-color;
 }

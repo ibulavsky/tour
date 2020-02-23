@@ -5,23 +5,13 @@ import {
     REGISTER_PATH,
     SIGN_IN_PATH,
 } from './Routes';
+import styles from "./Header.module.scss"
 
 const Header: React.FC = () => {
     const [showOld, setShowOld] = useState(false);
 
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-            }}
-        >
-
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-            }}>
+        <div className={styles.container}>
                 <button style={{width: '145px'}}
                         onClick={() => setShowOld(!showOld)}>{showOld ? 'hide OldDev header' : 'show OldDev header'}</button>
                 {showOld &&
@@ -36,7 +26,6 @@ const Header: React.FC = () => {
                     <NavLink to={FORGOT_PATH}>forgot</NavLink>
                 </div>
                 }
-            </div>
         </div>
     );
 };

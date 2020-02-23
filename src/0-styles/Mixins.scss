@@ -1,9 +1,12 @@
 @import "./Colors.scss";
+@import "./Sizes.scss";
 
 @mixin container($margin) {
   display: flex;
+  height: 100vh - $header-height;
   justify-content: center;
-  margin: $margin;
+  align-items: center;
+  //margin: $margin;
 }
 
 @mixin wrapper($width) {
