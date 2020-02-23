@@ -47,7 +47,6 @@ const SignIn: React.FC<SignInProps> = ({
                 </div>
             </div>
         </div>
-
     );
 };
 

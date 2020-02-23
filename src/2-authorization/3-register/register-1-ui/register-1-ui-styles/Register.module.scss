@@ -1,4 +1,4 @@
-@import "./../../../../0-styles/Full-Styles.scss";
+@import "../../../../0-styles/Full-Styles.scss";
 
 .container {
   @include container(20px)
@@ -18,15 +18,6 @@
 
 .form {
   @include form()
-}
-
-.checkbox {
-  margin: 0 10px 0 0;
-  padding: 0;
-}
-
-.label {
-  margin-bottom: 5px;
 }
 
 .button {
