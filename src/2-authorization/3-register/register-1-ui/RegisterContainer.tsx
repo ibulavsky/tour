@@ -18,9 +18,9 @@ interface IPropsRegister {
 }
 
 const RegisterContainer: React.FC<IPropsRegister> = (props) => {
-    let [email, setEmail] = useState('Your-mail');
-    let [passwordFirst, setFirstPassword] = useState('Your password');
-    let [passwordSecond, setSecondPassword] = useState('Your password');
+    let [email, setEmail] = useState('');
+    let [passwordFirst, setFirstPassword] = useState('');
+    let [passwordSecond, setSecondPassword] = useState('');
 
     let onSetEmail = (email: string) => {
         setEmail(email)

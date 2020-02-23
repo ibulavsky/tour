@@ -13,7 +13,7 @@ interface IPropsForgotMail {
     errorMessage: string,
 }
 const ForgotContainer: React.FC<IPropsForgotMail> = (props) => {
-    let [email, setEmail] = useState('Your-mail');
+    let [email, setEmail] = useState('');
 
     let onSetEmail = (email: string) => {
         setEmail(email)

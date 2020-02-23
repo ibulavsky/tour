@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './forgot-1-ui-styles/Forgot.module.scss'
 
 interface ForgotProps {
     email: string,
@@ -10,13 +11,19 @@ interface ForgotProps {
 const Forgot: React.FC<ForgotProps> = ({email, onSetEmail, onSubmit, errorMessage}) => {
 
     return (
-        <div>
-            <div>
-                <span>E-mail: </span><input type={"e-mail"} placeholder={'Your e-mail'} value={email}
-                                            onChange={e => onSetEmail(e.currentTarget.value)}/>
+        <div className={styles.container}>
+            <div className={styles.wrapper}>
+                <h2 className={styles.header}>Восстановление пароля</h2>
+                <div className={styles.forms}>
+                    <div className={styles.form}>
+                        <input type={"e-mail"} placeholder={'Адрес почты'} value={email}
+                               onChange={e => onSetEmail(e.currentTarget.value)}/>
+                    </div>
+                    <button className={styles.button} onClick={onSubmit}>Напомнить</button>
+                </div>
+
+                <div>{errorMessage}</div>
             </div>
-            <div>{errorMessage}</div>
-            <button onClick={onSubmit}>Send on e-mail</button>
         </div>
     );
 };

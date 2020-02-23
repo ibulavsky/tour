@@ -1,0 +1,25 @@
+@import "../../../../0-styles/Full-Styles.scss";
+
+.container {
+  @include container(20px)
+}
+
+.wrapper {
+  @include wrapper(300px)
+}
+
+.header {
+  @include header(20px)
+}
+
+.forms {
+  @include central()
+}
+
+.form {
+  @include form()
+}
+
+.button {
+  @include button()
+}

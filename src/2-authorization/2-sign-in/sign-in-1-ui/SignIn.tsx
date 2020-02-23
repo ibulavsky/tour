@@ -21,7 +21,7 @@ const SignIn: React.FC<SignInProps> = ({
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <h2 className={styles.header}>Форма входа</h2>
+                <h2 className={styles.header}>Вход</h2>
                 <div className={styles.forms}>
                     <div className={styles.form}>
                         <input type={"email"} placeholder={'Адрес почты'}

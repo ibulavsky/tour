@@ -21,23 +21,23 @@ const Register: React.FC<RegisterProps> = ({email, passwordFirst, passwordSecond
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <h2 className={styles.header}>Форма регистрации</h2>
+                <h2 className={styles.header}>Регистрация</h2>
                 <div className={styles.forms}>
                     <div className={styles.form}>
-                        <input type={"e-mail"} placeholder={'Your e-mail'} value={email}
+                        <input type={"e-mail"} placeholder={'Адрес почты'} value={email}
                                onChange={e => onSetEmail(e.currentTarget.value)}/>
                     </div>
                     <div className={styles.form}>
-                        <input type={"password"} placeholder={'Enter password'}
+                        <input type={"password"} placeholder={'Пароль'}
                                value={passwordFirst}
                                onChange={e => onSetFirstPassword(e.currentTarget.value)}/>
                     </div>
                     <div className={styles.form}>
-                        <input type={"password"} placeholder={'Enter password'}
+                        <input type={"password"} placeholder={'Пароль повторно'}
                                value={passwordSecond}
                                onChange={e => onSetSecondPassword(e.currentTarget.value)}/>
                     </div>
-                    <button className={styles.button} onClick={onSubmit}>Register</button>
+                    <button className={styles.button} onClick={onSubmit}>Регистрация</button>
                     <div>{errorMessage}</div>
                 </div>
             </div>

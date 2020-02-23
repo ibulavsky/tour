@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {IAppStore} from "../../../1-main/main-2-bll/store";
 import {loginThunk} from "../sign-in-2-bll/signInThunks";
 import {loginValidate} from "../../../7-helpers/validators/validator";
+import {PROFILE_PATH} from "../../../1-main/main-1-ui/Routes";
+import {Redirect} from 'react-router-dom';
 
 interface SignInContainerIProps {
 
@@ -43,16 +45,15 @@ const SignInContainer: React.FC<SignInContainerIProps> = () => {
 
     return (
         <>
-            {/*{isAuth*/}
-            {/*? <Redirect to={PROFILE_PATH}/>*/}
-            {/*: */}
-            <SignIn rememberMe={isRememberMe} email={email} password={password}
-                    errorMessage={errorMessage + onErrorMessage}
-                    onEmailChanged={onEmailChange} onPasswordChanged={onPasswordChange}
-                    onSubmit={onSubmitLogin}
-                    isFetching={isFetching}
-                    onRememberChange={onRememberChange}/>
-            {/*}*/}
+            {isAuth
+                ? <Redirect to={PROFILE_PATH}/>
+                : <SignIn rememberMe={isRememberMe} email={email} password={password}
+                          errorMessage={errorMessage + onErrorMessage}
+                          onEmailChanged={onEmailChange} onPasswordChanged={onPasswordChange}
+                          onSubmit={onSubmitLogin}
+                          isFetching={isFetching}
+                          onRememberChange={onRememberChange}/>
+            }
         </>
     );
 };
